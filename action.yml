@@ -1,0 +1,33 @@
+name: 'Run detekt with reviewdog'
+description: '🐶 Run detekt with reviewdog on pull requests to enforce best practices'
+author: 'Alexey Egin (DominuS-RU)'
+
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN'
+    required: true
+  level:
+    description: 'Report level for reviewdog [info,warning,error]'
+    required: false
+    default: 'error'
+  detekt_config:
+    description: 'yml detekt config'
+    required: true
+    default: 'default-detekt-config.yml'
+  reporter:
+    description: |
+      Reporter of reviewdog command [github-pr-check,github-pr-review].
+      Default is github-pr-check.
+    required: false
+    default: 'github-pr-check'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.detekt_config }}
+    - ${{ inputs.github_token }}
+    - ${{ inputs.level }}
+    - ${{ inputs.reporter }}
+branding:
+  icon: 'edit'
+  color: 'blue'
