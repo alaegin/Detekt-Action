@@ -29,5 +29,5 @@ runs:
     - ${{ inputs.level }}
     - ${{ inputs.reporter }}
 branding:
-  icon: 'edit'
-  color: 'blue'
+  icon: 'check-square'
+  color: 'orange'
