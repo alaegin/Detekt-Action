@@ -12,8 +12,12 @@ inputs:
     default: 'error'
   detekt_config:
     description: 'yml detekt config'
-    required: true
+    required: false
     default: 'default-detekt-config.yml'
+  detekt_excludes:
+    description: 'Globing patterns describing paths to exclude from the analysis.'
+    required: false
+    default: '**/build/**,**/.idea/**'
   reporter:
     description: |
       Reporter of reviewdog command [github-pr-check,github-pr-review].
@@ -25,6 +29,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.detekt_config }}
+    - ${{ inputs.detekt_excludes }}
     - ${{ inputs.github_token }}
     - ${{ inputs.level }}
     - ${{ inputs.reporter }}
