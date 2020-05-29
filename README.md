@@ -11,7 +11,7 @@ This action allows running [detekt](https://github.com/detekt/detekt) with [revi
 ![Example comment made by the action with github-pr-check](./assets/screenshot_pr_check.png)
 
 ### `github-pr-review`
-`reviewdog_reporter: github-pr-review`
+`reviewdog_reporter: github-pr-review`  
 `github-pr-review` reporter reports results to GitHub PullRequest review comments.
 
 ![Example comment made by the action with github-pr-review](./assets/screenshot_pr_review.png)
