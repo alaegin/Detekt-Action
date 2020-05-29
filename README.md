@@ -86,7 +86,7 @@ jobs:
 ```
 
 ## License
-MIT. See `LICENSE`
+[MIT](LICENSE)
 
 ## Inspiration
 * [action-ktlint](https://github.com/ScaCap/action-ktlint) - Action for running ktlint with reviewdog
