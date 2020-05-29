@@ -6,10 +6,20 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     required: true
-  level:
+  reviewdog_level:
     description: 'Report level for reviewdog [info,warning,error]'
     required: false
     default: 'error'
+  reviewdog_filter:
+    description: 'Filter mode for reviewdog [added,diff_context,file,nofilter]'
+    required: false
+    default: 'added'
+  reviewdog_reporter:
+    description: |
+      Reporter of reviewdog command [github-pr-check,github-pr-review].
+      Default is github-pr-check.
+    required: false
+    default: 'github-pr-check'
   detekt_config:
     description: 'yml detekt config'
     required: false
@@ -18,21 +28,16 @@ inputs:
     description: 'Globing patterns describing paths to exclude from the analysis.'
     required: false
     default: '**/build/**,**/.idea/**'
-  reporter:
-    description: |
-      Reporter of reviewdog command [github-pr-check,github-pr-review].
-      Default is github-pr-check.
-    required: false
-    default: 'github-pr-check'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.reviewdog_level }}
+    - ${{ inputs.reviewdog_filter }}
+    - ${{ inputs.reviewdog_reporter }}
     - ${{ inputs.detekt_config }}
     - ${{ inputs.detekt_excludes }}
-    - ${{ inputs.github_token }}
-    - ${{ inputs.level }}
-    - ${{ inputs.reporter }}
 branding:
   icon: 'check-square'
   color: 'orange'
