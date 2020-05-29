@@ -14,7 +14,7 @@ This action allows running [detekt](https://github.com/detekt/detekt) with [revi
 `reviewdog_reporter: github-pr-review`
 `github-pr-review` reporter reports results to GitHub PullRequest review comments.
 
-![Example comment made by the action with github-pr-review](./assets/screenshot_pr_check.png)
+![Example comment made by the action with github-pr-review](./assets/screenshot_pr_review.png)
 
 ## License
 MIT. See `LICENSE`
