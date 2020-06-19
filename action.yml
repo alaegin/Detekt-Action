@@ -1,4 +1,4 @@
-name: 'Run detekt v1.10.0-RC1 with reviewdog'
+name: 'Run detekt with reviewdog (fork)'
 description: '🐶 Run detekt with reviewdog on pull requests to enforce best practices'
 author: 'Alexey Egin (DominuS-RU)'
 
