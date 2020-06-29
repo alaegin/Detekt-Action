@@ -8,7 +8,7 @@ RUN apk --no-cache --update add git curl openjdk11 \
 
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin/
 
-RUN curl -sSLO https://github.com/detekt/detekt/releases/download/${DETEKT_VERSION}/detekt \
+RUN curl -sSLO https://github.com/detekt/detekt/releases/download/v${DETEKT_VERSION}/detekt \
     && chmod a+x detekt \
     && mv detekt /usr/local/bin/
 
