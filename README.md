@@ -1,5 +1,7 @@
 # Github Action for running detekt with reviewdog
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/DominuS-RU/Detekt-Action)
+
 This action allows running [detekt](https://github.com/detekt/detekt) with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests
 
 ## Examples
