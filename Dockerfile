@@ -1,7 +1,7 @@
 FROM alpine:3.11
 
 # https://github.com/detekt/detekt/releases
-ENV DETEKT_VERSION "1.11.2"
+ENV DETEKT_VERSION "1.12.0-RC1"
 
 RUN apk --no-cache --update add git curl openjdk11 \
     && rm -rf /var/cache/apk/*
