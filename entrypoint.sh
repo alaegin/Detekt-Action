@@ -11,4 +11,4 @@ detekt --fail-fast --config "${INPUT_DETEKT_CONFIG}" \
   --plugins /opt/detekt-formatting.jar
 
 reviewdog -f=checkstyle -name="detekt" -reporter="${INPUT_REVIEWDOG_REPORTER}" \
-  -level="${INPUT_REVIEWDOG_LEVEL}" -filter-mode=nofilter <detekt_report.xml
+  -level="${INPUT_REVIEWDOG_LEVEL}" -filter-mode="${INPUT_REVIEWDOG_FILTER}" <detekt_report.xml
