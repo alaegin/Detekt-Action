@@ -81,7 +81,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: DominuS-RU/Detekt-Action@v1.15.0-RC2
+        uses: DominuS-RU/Detekt-Action@v1.15.0
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path
