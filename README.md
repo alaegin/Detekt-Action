@@ -1,6 +1,6 @@
 # Github Action for running detekt with reviewdog
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/DominuS-RU/Detekt-Action)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/alaegin/Detekt-Action)
 
 This action allows running [detekt](https://github.com/detekt/detekt) with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests
 
@@ -81,7 +81,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: DominuS-RU/Detekt-Action@v1.15.0
+        uses: alaegin/Detekt-Action@v1.15.0
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path
