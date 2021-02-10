@@ -87,7 +87,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: alaegin/Detekt-Action@v1.15.0
+        uses: DominuS-RU/Detekt-Action@v1.15.0.1
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path
