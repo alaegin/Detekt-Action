@@ -28,6 +28,12 @@ inputs:
     description: 'Globing patterns describing paths to exclude from the analysis.'
     required: false
     default: '**/build/**,**/.idea/**'
+  fail_on_error:
+    description: |
+      Fails the current check if any error was found [true/false]
+      Default is false.
+    required: false
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'

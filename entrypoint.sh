@@ -3,6 +3,10 @@
 # cd or fail
 cd "$GITHUB_WORKSPACE" || exit 1
 
+if [ "$INPUT_FAIL_ON_ERROR" = true ] ; then
+  set -o pipefail
+fi
+
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 detekt --fail-fast --config "${INPUT_DETEKT_CONFIG}" \
