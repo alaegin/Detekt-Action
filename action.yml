@@ -44,6 +44,7 @@ runs:
     - ${{ inputs.reviewdog_reporter }}
     - ${{ inputs.detekt_config }}
     - ${{ inputs.detekt_excludes }}
+    - ${{ inputs.fail_on_error }}
 branding:
   icon: 'check-square'
   color: 'orange'
