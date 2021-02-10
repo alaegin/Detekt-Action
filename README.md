@@ -24,41 +24,47 @@ This action has several inputs you may be interested in:
 
 ### `github_token`
 
-**Required.** Must be in form of github_token: ${{ secrets.github_token }}.
+**Required.** Must be in form of `github_token: ${{ secrets.github_token }}`.
 
 ### `reviewdog_level`
 
-Optional. Report level for reviewdog's `github-pr-check` reporter [`info`,`warning`,`error`].
+Optional. Report level for reviewdog's `github-pr-check` reporter [`info`,`warning`,`error`].  
 It's same as `-level` flag of reviewdog.
 The default is `error`.
 
 ### `reviewdog_filter`
 
-Optional. Filter mode for reviewdog. [`added `,`diff_context`,`file`,`nofilter`]
-It's same as `-filter-mode` flag of reviewdog.
+Optional. Filter mode for reviewdog. [`added `,`diff_context`,`file`,`nofilter`]  
+It's same as `-filter-mode` flag of reviewdog.  
 The default is `added`.
 
 [Read more](https://github.com/reviewdog/reviewdog#filter-mode)
 
 ### `reviewdog_reporter`
 
-Optional. Reporter for reviewdog. [`github-pr-check`,`github-pr-review`]
+Optional. Reporter for reviewdog. [`github-pr-check`,`github-pr-review`]  
 The default is `github-pr-check`.
 
 [Read more](https://github.com/reviewdog/reviewdog#reporters)
 
 ### `detekt_config`
 
-Optional. Path to the config file for detekt. The default is `default-detekt-config.yml`
+Optional. Path to the config file for detekt.  
+The default is `default-detekt-config.yml`
 
 [Read more](https://detekt.github.io/detekt/cli.html)
 
 ### `detekt_excludes`
 
-Optional. Globing patterns describing paths to exclude from the analysis.
+Optional. Globing patterns describing paths to exclude from the analysis.  
 The default is `**/build/**,**/.idea/**`
 
 [Read more](https://detekt.github.io/detekt/cli.html)
+
+### `fail_on_error`
+
+Optional. Fails the current check if any error was found [`true`/`false`]  
+The default value is `true`.
 
 ## Usage
 
@@ -81,7 +87,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: alaegin/Detekt-Action@v1.15.0
+        uses: DominuS-RU/Detekt-Action@v1.15.0.1
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path
