@@ -64,7 +64,7 @@ The default is `**/build/**,**/.idea/**`
 ### `fail_on_error`
 
 Optional. Fails the current check if any error was found [`true`/`false`]  
-The default value is `false`.
+The default value is `true`.
 
 ## Usage
 

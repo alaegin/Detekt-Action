@@ -33,7 +33,7 @@ inputs:
       Fails the current check if any error was found [true/false]
       Default is false.
     required: false
-    default: 'false'
+    default: 'true'
 runs:
   using: 'docker'
   image: 'Dockerfile'
