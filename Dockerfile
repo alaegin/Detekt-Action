@@ -1,7 +1,7 @@
 FROM alpine:3.13.1
 
 # https://github.com/detekt/detekt/releases
-ARG DETEKT_VERSION="1.16.0-RC1"
+ARG DETEKT_VERSION="1.16.0"
 # https://github.com/reviewdog/reviewdog/releases
 ARG REVIEWDOG_VERSION="0.11.0"
 
