@@ -72,10 +72,14 @@ Optional. Additional plugins for detekt.
 Should be defined with comma separation `detekt_plugins: 'path/1.jar,path/2.jar'`  
 The default value is empty.
 
+[Read more](https://detekt.github.io/detekt/cli.html)
+
 ### `detekt_baseline`
 
 Optional. Provides baseline.xml file to detekt.  
 The default value is empty.
+
+[Read more](https://detekt.github.io/detekt/cli.html)
 
 ## Usage
 
