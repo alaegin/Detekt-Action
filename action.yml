@@ -34,6 +34,16 @@ inputs:
       Default is false.
     required: false
     default: 'true'
+  detekt_plugins:
+    description: |
+      Additional plugins for detekt.
+      Should be defined with comma separation
+      Example: 'path/1.jar,path/2.jar'
+    required: false
+  detekt_baseline:
+    description: |
+      Provides baseline.xml file to detekt
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -45,6 +55,8 @@ runs:
     - ${{ inputs.detekt_config }}
     - ${{ inputs.detekt_excludes }}
     - ${{ inputs.fail_on_error }}
+    - ${{ inputs.detekt_plugins }}
+    - ${{ inputs.detekt_baseline }}
 branding:
   icon: 'check-square'
   color: 'orange'
