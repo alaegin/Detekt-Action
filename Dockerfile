@@ -11,7 +11,7 @@ ARG DETEKT_URL="https://github.com/detekt/detekt/releases/download/v${DETEKT_VER
 ARG DETEKT_FORMATTING_FILE_NAME="detekt-formatting-${DETEKT_VERSION}.jar"
 ARG DETEKT_FORMATTING_URL="https://github.com/detekt/detekt/releases/download/v${DETEKT_VERSION}/${DETEKT_FORMATTING_FILE_NAME}"
 
-RUN apk --no-cache --update add git curl openjdk11 \
+RUN apk --no-cache --update add git curl openjdk11 bash \
     && rm -rf /var/cache/apk/*
 
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/v${REVIEWDOG_VERSION}/install.sh | sh -s -- -b /usr/local/bin/

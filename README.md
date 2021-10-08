@@ -66,6 +66,21 @@ The default is `**/build/**,**/.idea/**`
 Optional. Fails the current check if any error was found [`true`/`false`]  
 The default value is `true`.
 
+### `detekt_plugins`
+
+Optional. Additional plugins for detekt.  
+Should be defined with comma separation `detekt_plugins: 'path/1.jar,path/2.jar'`  
+The default value is empty.
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
+### `detekt_baseline`
+
+Optional. Provides baseline.xml file to detekt.  
+The default value is empty.
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
 ## Usage
 
 Following example runs detekt with
@@ -87,7 +102,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: alaegin/Detekt-Action@v1.18.1
+        uses: alaegin/Detekt-Action@v1.18.1.1
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path
