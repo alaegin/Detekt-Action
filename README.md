@@ -81,6 +81,14 @@ The default value is empty.
 
 [Read more](https://detekt.github.io/detekt/cli.html)
 
+### `detekt_parallel`
+
+Optional. Executes detekt in parallel.  
+The default value is empty.
+To enable declare `detekt_parallel: true`
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
 ## Usage
 
 Following example runs detekt with
@@ -102,7 +110,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: alaegin/Detekt-Action@v1.18.1.1
+        uses: alaegin/Detekt-Action@v1.18.1.2
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path

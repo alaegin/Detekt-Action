@@ -41,8 +41,10 @@ inputs:
       Example: 'path/1.jar,path/2.jar'
     required: false
   detekt_baseline:
-    description: |
-      Provides baseline.xml file to detekt
+    description: 'Provides baseline.xml file to detekt'
+    required: false
+  detekt_parallel:
+    description: 'Executes detekt in parallel'
     required: false
 runs:
   using: 'docker'
@@ -57,6 +59,7 @@ runs:
     - ${{ inputs.fail_on_error }}
     - ${{ inputs.detekt_plugins }}
     - ${{ inputs.detekt_baseline }}
+    - ${{ inputs.detekt_parallel }}
 branding:
   icon: 'check-square'
   color: 'orange'
