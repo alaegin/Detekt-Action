@@ -44,6 +44,10 @@ inputs:
     description: |
       Provides baseline.xml file to detekt
     required: false
+  detekt_parallel:
+    description: |
+      Executes detekt in parallel
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -57,6 +61,7 @@ runs:
     - ${{ inputs.fail_on_error }}
     - ${{ inputs.detekt_plugins }}
     - ${{ inputs.detekt_baseline }}
+    - ${{ inputs.detekt_parallel }}
 branding:
   icon: 'check-square'
   color: 'orange'

@@ -27,6 +27,10 @@ if [ -n "$INPUT_DETEKT_BASELINE" ]; then
   detekt_command+="--baseline ${INPUT_DETEKT_BASELINE} "
 fi
 
+if [ -n "$INPUT_DETEKT_PARALLEL" ]; then
+  detekt_command+="--parallel "
+fi
+
 echo "$detekt_command"
 eval "$detekt_command"
 

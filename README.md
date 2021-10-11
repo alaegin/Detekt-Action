@@ -81,6 +81,14 @@ The default value is empty.
 
 [Read more](https://detekt.github.io/detekt/cli.html)
 
+### `detekt_parallel`
+
+Optional. Executes detekt in parallel.  
+The default value is empty.
+To enable declare `detekt_parallel: true`
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
 ## Usage
 
 Following example runs detekt with
