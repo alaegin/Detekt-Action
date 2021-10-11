@@ -41,12 +41,10 @@ inputs:
       Example: 'path/1.jar,path/2.jar'
     required: false
   detekt_baseline:
-    description: |
-      Provides baseline.xml file to detekt
+    description: Provides baseline.xml file to detekt
     required: false
   detekt_parallel:
-    description: |
-      Executes detekt in parallel
+    description: Executes detekt in parallel
     required: false
 runs:
   using: 'docker'
