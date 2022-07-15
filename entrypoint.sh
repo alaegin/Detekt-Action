@@ -4,6 +4,8 @@ detekt_formatting="/opt/detekt-formatting.jar"
 
 # cd or fail
 cd "$GITHUB_WORKSPACE" || exit 1
+# Fixes https://github.com/reviewdog/reviewdog/issues/1158
+git config --global --add safe.directory $GITHUB_WORKSPACE || exit 1
 
 if [ "$INPUT_FAIL_ON_ERROR" = true ] ; then
   set -o pipefail
