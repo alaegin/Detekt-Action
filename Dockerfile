@@ -1,9 +1,9 @@
 FROM alpine:3.13.1
 
 # https://github.com/detekt/detekt/releases
-ARG DETEKT_VERSION="1.20.0"
+ARG DETEKT_VERSION="1.21.0-RC2"
 # https://github.com/reviewdog/reviewdog/releases
-ARG REVIEWDOG_VERSION="0.14.0"
+ARG REVIEWDOG_VERSION="0.14.1"
 
 ARG DETEKT_FILE_NAME="detekt-cli-${DETEKT_VERSION}-all.jar"
 ARG DETEKT_URL="https://github.com/detekt/detekt/releases/download/v${DETEKT_VERSION}/${DETEKT_FILE_NAME}"
