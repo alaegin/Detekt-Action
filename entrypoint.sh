@@ -14,7 +14,6 @@ fi
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 detekt_command="java -jar /opt/detekt.jar "
-detekt_command+="--fail-fast "
 detekt_command+="--config ${INPUT_DETEKT_CONFIG} "
 detekt_command+="--report xml:detekt_report.xml "
 detekt_command+="--excludes ${INPUT_DETEKT_EXCLUDES} "
@@ -31,6 +30,14 @@ fi
 
 if [ -n "$INPUT_DETEKT_PARALLEL" ]; then
   detekt_command+="--parallel "
+fi
+
+if [ -n "$DETEKT_INPUT_BUILD_UPON_DEFAULT_CONFIG" ]; then
+  detekt_command+="--build-upon-default-config "
+fi
+
+if [ -n "$DETEKT_ALL_RULES" ]; then
+  detekt_command+="--all-rules "
 fi
 
 echo "$detekt_command"

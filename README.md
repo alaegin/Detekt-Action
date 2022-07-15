@@ -2,17 +2,21 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alaegin/Detekt-Action)
 
-This action allows running [detekt](https://github.com/detekt/detekt) with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests
+This action allows running [detekt](https://github.com/detekt/detekt)
+with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests
 
 ## Examples
 
 ### `github-pr-check` - used by default
+
 `reviewdog_reporter: github-pr-check`  
-`github-pr-check` reporter reports results to [GitHub Checks](https://github.com/reviewdog/reviewdog#reporter-github-checks--reportergithub-pr-check)
+`github-pr-check` reporter reports results
+to [GitHub Checks](https://github.com/reviewdog/reviewdog#reporter-github-checks--reportergithub-pr-check)
 
 ![Example comment made by the action with github-pr-check](./assets/screenshot_pr_check.png)
 
 ### `github-pr-review`
+
 `reviewdog_reporter: github-pr-review`  
 `github-pr-review` reporter reports results to GitHub PullRequest review comments.
 
@@ -89,13 +93,31 @@ To enable declare `detekt_parallel: true`
 
 [Read more](https://detekt.github.io/detekt/cli.html)
 
+### `detekt_build_upon_default_config`
+
+Optional. Preconfigures detekt with a bunch of rules and some opinionated defaults
+for you.  
+Allows additional provided configurations to override the
+defaults.  
+To enable declare `detekt_build_upon_default_config: true`
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
+### `detekt_all_rules`
+
+Optional. Activates all available (even unstable) rules.  
+The default value is empty.
+To enable declare `detekt_all_rules: true`
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
 ## Usage
 
 Following example runs detekt with
 
 ```yml
 name: reviewdog
-on: [pull_request]
+on: [ pull_request ]
 
 jobs:
   detekt:
@@ -117,7 +139,9 @@ jobs:
 ```
 
 ## License
+
 [MIT](LICENSE)
 
 ## Inspiration
+
 * [action-ktlint](https://github.com/ScaCap/action-ktlint) - Action for running ktlint with reviewdog

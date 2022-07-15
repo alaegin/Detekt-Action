@@ -46,6 +46,14 @@ inputs:
   detekt_parallel:
     description: 'Executes detekt in parallel'
     required: false
+  detekt_build_upon_default_config:
+    description: 'Preconfigures detekt with a bunch of rules and some opinionated defaults 
+      for you. Allows additional provided configurations to override the 
+      defaults.'
+    required: false
+  detekt_all_rules:
+    description: 'Activates all available (even unstable) rules.'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -60,6 +68,8 @@ runs:
     - ${{ inputs.detekt_plugins }}
     - ${{ inputs.detekt_baseline }}
     - ${{ inputs.detekt_parallel }}
+    - ${{ inputs.detekt_build_upon_default_config }}
+    - ${{ inputs.detekt_all_rules }}
 branding:
   icon: 'check-square'
   color: 'orange'
