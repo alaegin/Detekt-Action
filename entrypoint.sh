@@ -40,6 +40,10 @@ if [ -n "$DETEKT_ALL_RULES" ]; then
   detekt_command+="--all-rules "
 fi
 
+if [ -n "$DETEKT_INPUT" ]; then
+    detekt_command+="--input ${DETEKT_INPUT} "
+fi
+
 echo "$detekt_command"
 eval "$detekt_command"
 

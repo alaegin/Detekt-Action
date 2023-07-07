@@ -111,6 +111,13 @@ To enable declare `detekt_all_rules: true`
 
 [Read more](https://detekt.github.io/detekt/cli.html)
 
+### `detekt_input`
+
+Optional. Specify explicit inputs to detect-cli.
+Inputs provided as a comma-separated string.
+
+[Read more](https://detekt.github.io/detekt/cli.html)
+
 ## Usage
 
 Following example runs detekt with
