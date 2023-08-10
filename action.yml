@@ -54,6 +54,11 @@ inputs:
   detekt_all_rules:
     description: 'Activates all available (even unstable) rules.'
     required: false
+  detekt_input:
+    description: |
+      'Specific inputs for detekt (the --input argument for detekt-cli)'
+      Example: 'path/to/dir1,path/to/dir2'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -70,6 +75,7 @@ runs:
     - ${{ inputs.detekt_parallel }}
     - ${{ inputs.detekt_build_upon_default_config }}
     - ${{ inputs.detekt_all_rules }}
+    - ${{ inputs.detekt_input }}
 branding:
   icon: 'check-square'
   color: 'orange'
