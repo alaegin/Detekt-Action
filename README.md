@@ -118,6 +118,11 @@ Inputs provided as a comma-separated string.
 
 [Read more](https://detekt.github.io/detekt/cli.html)
 
+### `image_registry`
+
+Optional. Image Registry URL (defaults to Docker Hub).  
+Example: `image_registry: your-private-registry.com`.
+
 ## Usage
 
 Following example runs detekt with
