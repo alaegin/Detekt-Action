@@ -1,4 +1,4 @@
-FROM alpine:3.13.1
+FROM ${IMAGE_REGISTRY:-docker.io}/alpine:3.13.1
 
 # https://github.com/detekt/detekt/releases
 ARG DETEKT_VERSION="1.23.6"
