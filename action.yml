@@ -59,11 +59,15 @@ inputs:
       'Specific inputs for detekt (the --input argument for detekt-cli)'
       Example: 'path/to/dir1,path/to/dir2'
     required: false
+  image_registry:
+    description: 'Image Registry URL (optional; defaults to Docker Hub)'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.github_token }}
+    - ${{ inputs.image_registry }}
     - ${{ inputs.reviewdog_level }}
     - ${{ inputs.reviewdog_filter }}
     - ${{ inputs.reviewdog_reporter }}
