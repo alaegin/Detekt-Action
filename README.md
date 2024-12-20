@@ -139,7 +139,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: alaegin/Detekt-Action@v1.23.6
+        uses: alaegin/Detekt-Action@v1.23.7
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path
