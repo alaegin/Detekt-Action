@@ -139,7 +139,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: detekt
-        uses: Nandi/Detekt-Action@v1.23.8
+        uses: Nandi/Detekt-Action@2.0.0-alpha.0
         with:
           github_token: ${{ secrets.github_token }}
           detekt_config: detekt-config.yml # Change config path

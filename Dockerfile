@@ -1,14 +1,14 @@
 FROM alpine:3.13.1
 
 # https://github.com/detekt/detekt/releases
-ARG DETEKT_VERSION="1.23.8"
+ARG DETEKT_VERSION="2.0.0-alpha.0"
 # https://github.com/reviewdog/reviewdog/releases
 ARG REVIEWDOG_VERSION="0.17.4"
 
 ARG DETEKT_FILE_NAME="detekt-cli-${DETEKT_VERSION}-all.jar"
 ARG DETEKT_URL="https://github.com/detekt/detekt/releases/download/v${DETEKT_VERSION}/${DETEKT_FILE_NAME}"
 
-ARG DETEKT_FORMATTING_FILE_NAME="detekt-formatting-${DETEKT_VERSION}.jar"
+ARG DETEKT_FORMATTING_FILE_NAME="detekt-rules-ktlint-wrapper-${DETEKT_VERSION}.jar"
 ARG DETEKT_FORMATTING_URL="https://github.com/detekt/detekt/releases/download/v${DETEKT_VERSION}/${DETEKT_FORMATTING_FILE_NAME}"
 
 RUN apk --no-cache --update add git curl openjdk11 bash \
