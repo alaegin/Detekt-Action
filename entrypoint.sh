@@ -5,7 +5,7 @@ detekt_formatting="/opt/detekt-formatting.jar"
 # cd or fail
 cd "$GITHUB_WORKSPACE" || exit 1
 # Fixes https://github.com/reviewdog/reviewdog/issues/1158
-git config --global --add safe.directory $GITHUB_WORKSPACE || exit 1
+git config --global --add safe.directory "$GITHUB_WORKSPACE" || exit 1
 
 if [ "$INPUT_FAIL_ON_ERROR" = true ] ; then
   set -o pipefail
@@ -19,33 +19,40 @@ detekt_command+="--report xml:detekt_report.xml "
 detekt_command+="--excludes ${INPUT_DETEKT_EXCLUDES} "
 
 if [ -z "$INPUT_DETEKT_PLUGINS" ]; then
-  detekt_command+="--plugins ${detekt_formatting} "
+  detekt_command+=" --plugins \"${detekt_formatting}\""
 else
-  detekt_command+="--plugins ${detekt_formatting},${INPUT_DETEKT_PLUGINS} "
+  detekt_command+=" --plugins \"${detekt_formatting},${INPUT_DETEKT_PLUGINS}\""
 fi
 
+# Baseline
 if [ -n "$INPUT_DETEKT_BASELINE" ]; then
-  detekt_command+="--baseline ${INPUT_DETEKT_BASELINE} "
+  detekt_command+=" --baseline \"${INPUT_DETEKT_BASELINE}\""
 fi
 
+# Parallel (boolean-ish input)
 if [ -n "$INPUT_DETEKT_PARALLEL" ]; then
-  detekt_command+="--parallel "
+  detekt_command+=" --parallel"
 fi
 
-if [ -n "$DETEKT_INPUT_BUILD_UPON_DEFAULT_CONFIG" ]; then
-  detekt_command+="--build-upon-default-config "
+# Build upon default config (fixed var name)
+if [ -n "$INPUT_DETEKT_BUILD_UPON_DEFAULT_CONFIG" ]; then
+  detekt_command+=" --build-upon-default-config"
 fi
 
-if [ -n "$DETEKT_ALL_RULES" ]; then
-  detekt_command+="--all-rules "
+# All rules (fixed var name)
+if [ -n "$INPUT_DETEKT_ALL_RULES" ]; then
+  detekt_command+=" --all-rules"
 fi
 
-if [ -n "$DETEKT_INPUT" ]; then
-    detekt_command+="--input ${DETEKT_INPUT} "
+# Input paths (fixed var name)
+if [ -n "$INPUT_DETEKT_INPUT" ]; then
+  detekt_command+=" --input \"${INPUT_DETEKT_INPUT}\""
 fi
 
+echo "Running detekt with command:"
 echo "$detekt_command"
 eval "$detekt_command"
 
 reviewdog -f=checkstyle -name="detekt" -reporter="${INPUT_REVIEWDOG_REPORTER}" \
-  -level="${INPUT_REVIEWDOG_LEVEL}" -filter-mode="${INPUT_REVIEWDOG_FILTER}" <detekt_report.xml
+  -level="${INPUT_REVIEWDOG_LEVEL}" -filter-mode="${INPUT_REVIEWDOG_FILTER}" \
+  < detekt_report.xml
